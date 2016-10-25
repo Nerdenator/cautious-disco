@@ -57,7 +57,7 @@ public class P1_IsUnique {
 		return true;
 	}
 
-	//using a bit vector
+	//TODO using a bit vector
 	//assumption: string contains only characters 'a' through 'z'
 	//	public static Boolean isUniqueBitVector(String str){
 	//		int seen = 0;

@@ -72,4 +72,32 @@ public class P2_CheckPermutation {
 		}
 		return true;
 	}
+
+	/**
+	 * Assuming only (extended) ASCII characters (256), count the number of
+	 * occurrences of each character in s1 and make sure they match in s2
+	 * 
+	 * @param s1
+	 * @param s2
+	 * @return
+	 */
+	public static boolean isPermutationArray(String s1, String s2) {
+		//they have to be the same length
+		if (s1.length() != s2.length())
+			return false;
+
+		int[] hash = new int[256];
+		// put all the characters in s1 in hash, counting how many times they appear
+		for (int i = 0; i < s1.length(); i++) {
+			hash[s1.charAt(i)]++;
+		}
+		// remove all characters in s2 from hash, making sure we stop if we go negative
+		for (int i = 0; i < s2.length(); i++) {
+			if (hash[s2.charAt(i)] == 0)
+				return false;
+			hash[s2.charAt(i)]--;
+		}
+		return true;
+	}
+
 }

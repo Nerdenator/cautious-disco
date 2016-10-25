@@ -42,14 +42,10 @@ public class P7_RotateMatrix {
 	/**
 	 * Perform a rotation
 	 * 
-	 * @param A
-	 *            matrix to rotate
-	 * @param n
-	 *            matrix length
-	 * @param k
-	 *            xIndex to rotate
-	 * @param l
-	 *            yIndex to rotate
+	 * @param A matrix to rotate
+	 * @param n matrix length
+	 * @param k xIndex to rotate
+	 * @param l yIndex to rotate
 	 */
 	public static void rotateIndices(int[][] A, int n, int k, int l) {
 		//aux = top

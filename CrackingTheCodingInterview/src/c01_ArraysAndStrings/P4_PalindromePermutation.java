@@ -101,4 +101,6 @@ public class P4_PalindromePermutation {
 		// need to have at most 1 odd count
 		return numOdds <= 1;
 	}
+
+	// TODO Use bit vectors
 }
