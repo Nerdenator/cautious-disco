@@ -23,4 +23,12 @@ public class P2_CheckPermutationTest {
 		Assert.assertFalse(P2_CheckPermutation.isPermutationHash("abcba", "aaacb"));
 	}
 
+	@Test
+	public void testIsPermutationArray() {
+		Assert.assertTrue(P2_CheckPermutation.isPermutationArray("abc", "cab"));
+		Assert.assertTrue(P2_CheckPermutation.isPermutationArray("", ""));
+		Assert.assertFalse(P2_CheckPermutation.isPermutationArray("ab", "a"));
+		Assert.assertFalse(P2_CheckPermutation.isPermutationArray("ab", "ac"));
+		Assert.assertFalse(P2_CheckPermutation.isPermutationArray("abcba", "aaacb"));
+	}
 }
