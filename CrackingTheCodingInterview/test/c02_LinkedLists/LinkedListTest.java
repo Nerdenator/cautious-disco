@@ -1,7 +1,9 @@
 package c02_LinkedLists;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -24,6 +26,12 @@ public class LinkedListTest {
 		assertEquals("[]", empty.toString());
 		assertEquals("[10]", one.toString());
 		assertEquals("[3 -> 2 -> 7 -> 4 -> 2 -> 1]", list.toString());
+	}
+
+	@Test
+	public void testEmpty() {
+		assertTrue(empty.isEmpty());
+		assertFalse(list.isEmpty());
 	}
 
 	@Test

@@ -9,22 +9,47 @@ package c02_LinkedLists;
 public class LinkedList<T> {
 	Node<T> head;
 
-	/* Constructors */
+	/**
+	 * Constructor for empty list
+	 */
 	public LinkedList() {
 		head = null;
 	}
 
+	/**
+	 * Constructor for list with only head
+	 * 
+	 * @param data
+	 */
 	public LinkedList(T data) {
 		head = new Node<>(data);
 		head.next = null;
 	}
 
+	/**
+	 * Constructor for list formed from reverse array
+	 * 
+	 * @param array
+	 */
 	public LinkedList(T[] array) {
 		for (T data : array)
 			addFirst(data);
 	}
 
-	/* Add to the beginning of the list */
+	/**
+	 * Is the list empty
+	 * 
+	 * @return boolean
+	 */
+	public boolean isEmpty() {
+		return head == null;
+	}
+
+	/**
+	 * Add to the beginning of the list
+	 * 
+	 * @param data to insert into head
+	 */
 	public void addFirst(T data) {
 		if (head == null) {
 			head = new Node<>(data);
@@ -35,7 +60,11 @@ public class LinkedList<T> {
 		head = temp;
 	}
 
-	/* Remove from the beginning of the list */
+	/**
+	 * Remove from the beginning of the list
+	 * 
+	 * @return removed node
+	 */
 	public Node<T> removeFirst() {
 		if (head == null)
 			return null;
@@ -44,7 +73,12 @@ public class LinkedList<T> {
 		return temp;
 	}
 
-	/* Find the first node containing value*/
+	/**
+	 * Find the first node containing value
+	 * 
+	 * @param value
+	 * @return first node containing value
+	 */
 	public Node<T> find(T value) {
 		if (head == null)
 			return null;
@@ -54,7 +88,12 @@ public class LinkedList<T> {
 		return cur;
 	}
 
-	/* Delete the node containing value */
+	/**
+	 * Delete the node containing value
+	 * 
+	 * @param value
+	 * @return deleted node
+	 */
 	public Node<T> delete(T value) {
 		if (head == null)
 			return null;
