@@ -8,14 +8,10 @@ package c02_LinkedLists;
  * (7 -> 1 -> 6) + (5 -> 9 -> 2) .... [617 + 295]
  * (2 -> 1 -> 9) .................... [912]
  * 
- * Follow up: what if digits are stored in forward order?
- * (6 -> 1 -> 7) + (2 -> 9 -> 5)
- * (9 -> 1 -> 2)
- * 
  * @author adina
  *
  */
-public class P5_SumLists {
+public class P5_SumListsReverse {
 
 	/**
 	 * Sum the two lists, iteratively
@@ -24,7 +20,7 @@ public class P5_SumLists {
 	 * @param l2 second number in reverse order as a linked list
 	 * @return the sum of the two numbers, in reverse order, as a linked list
 	 */
-	public static LinkedList<Integer> sumReverseListIterative(LinkedList<Integer> l1, LinkedList<Integer> l2) {
+	public static LinkedList<Integer> sumListsReverseIterative(LinkedList<Integer> l1, LinkedList<Integer> l2) {
 		if ((l1 == null && l2 == null) || l1.isEmpty() && l2.isEmpty())
 			return null;
 		if (l1 == null || l1.isEmpty())
@@ -85,7 +81,7 @@ public class P5_SumLists {
 	 * @param l2 second number in reverse order as a linked list
 	 * @return the sum of the two numbers, in reverse order, as a linked list
 	 */
-	public static LinkedList<Integer> sumReverseListRecursive(LinkedList<Integer> l1, LinkedList<Integer> l2) {
+	public static LinkedList<Integer> sumListsReverseRecursive(LinkedList<Integer> l1, LinkedList<Integer> l2) {
 		if ((l1 == null && l2 == null) || l1.isEmpty() && l2.isEmpty())
 			return null;
 		if (l1 == null || l1.isEmpty())
@@ -93,7 +89,7 @@ public class P5_SumLists {
 		if (l2 == null || l2.isEmpty())
 			return l1;
 		LinkedList<Integer> result = new LinkedList<>();
-		result.head = sumReverseListRecursive(l1.head, l2.head, 0);
+		result.head = sumListsReverseRecursive(l1.head, l2.head, 0);
 		return result;
 	}
 
@@ -105,7 +101,7 @@ public class P5_SumLists {
 	 * @param carry
 	 * @return returns the head of the new list
 	 */
-	private static Node<Integer> sumReverseListRecursive(Node<Integer> n1, Node<Integer> n2, int carry) {
+	private static Node<Integer> sumListsReverseRecursive(Node<Integer> n1, Node<Integer> n2, int carry) {
 		// base case, when there isn't any carry left
 		if (n1 == null && n2 == null && carry == 0)
 			return null;
@@ -124,7 +120,7 @@ public class P5_SumLists {
 			Node<Integer> n2_next = null;
 			if (n2 != null)
 				n2_next = n2.next;
-			Node<Integer> next = sumReverseListRecursive(n1_next, n2_next, sum / 10);
+			Node<Integer> next = sumListsReverseRecursive(n1_next, n2_next, sum / 10);
 			result.next = next;
 		}
 		return result;
