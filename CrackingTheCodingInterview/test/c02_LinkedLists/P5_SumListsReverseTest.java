@@ -1,7 +1,6 @@
 package c02_LinkedLists;
 
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class P5_SumListsReverseTest {
@@ -29,7 +28,7 @@ public class P5_SumListsReverseTest {
 		Assert.assertNull(result);
 
 		result = P5_SumListsReverse.sumListsReverseIterative(l0, l0);
-		Assert.assertNull(result);
+		Assert.assertTrue(result.isEmpty());
 
 		result = P5_SumListsReverse.sumListsReverseIterative(l0, l1);
 		Assert.assertEquals(l1.toString(), result.toString());
@@ -41,7 +40,7 @@ public class P5_SumListsReverseTest {
 		Assert.assertEquals("[2 -> 2 -> 6]", result.toString());
 	}
 
-	@Ignore
+	@Test
 	public void testSumListsReverseRecursive() {
 		LinkedList<Integer> result = P5_SumListsReverse.sumListsReverseRecursive(l1, l2);
 		Assert.assertEquals("[2 -> 1 -> 9]", result.toString());
@@ -59,7 +58,7 @@ public class P5_SumListsReverseTest {
 		Assert.assertNull(result);
 
 		result = P5_SumListsReverse.sumListsReverseRecursive(l0, l0);
-		Assert.assertNull(result);
+		Assert.assertTrue(result.isEmpty());
 
 		result = P5_SumListsReverse.sumListsReverseRecursive(l0, l1);
 		Assert.assertEquals(l1.toString(), result.toString());

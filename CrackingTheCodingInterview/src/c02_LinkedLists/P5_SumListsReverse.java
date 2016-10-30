@@ -21,8 +21,10 @@ public class P5_SumListsReverse {
 	 * @return the sum of the two numbers, in reverse order, as a linked list
 	 */
 	public static LinkedList<Integer> sumListsReverseIterative(LinkedList<Integer> l1, LinkedList<Integer> l2) {
-		if ((l1 == null && l2 == null) || l1.isEmpty() && l2.isEmpty())
+		if ((l1 == null && l2 == null))
 			return null;
+		if (l1.isEmpty() && l2.isEmpty())
+			return new LinkedList<Integer>();
 		if (l1 == null || l1.isEmpty())
 			return l2;
 		if (l2 == null || l2.isEmpty())
@@ -82,8 +84,10 @@ public class P5_SumListsReverse {
 	 * @return the sum of the two numbers, in reverse order, as a linked list
 	 */
 	public static LinkedList<Integer> sumListsReverseRecursive(LinkedList<Integer> l1, LinkedList<Integer> l2) {
-		if ((l1 == null && l2 == null) || l1.isEmpty() && l2.isEmpty())
+		if ((l1 == null && l2 == null))
 			return null;
+		if (l1.isEmpty() && l2.isEmpty())
+			return new LinkedList<Integer>();
 		if (l1 == null || l1.isEmpty())
 			return l2;
 		if (l2 == null || l2.isEmpty())
