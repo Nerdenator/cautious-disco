@@ -3,12 +3,12 @@ package c02_LinkedLists;
 import java.util.Stack;
 
 /**
- * Implement a function to check if a
+ * Implement a function to check if a linked list is a palindrome
  * 
  * @author adina
  *
  */
-public class P6_Palindrome {
+public class P6_IsPalindrome {
 	/**
 	 * First reverse the list and then make sure the two lists are equal
 	 * Note: comparison can only go to half the list, but not worth computing
