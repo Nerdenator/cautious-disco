@@ -10,9 +10,8 @@ import java.util.Stack;
  */
 public class P6_IsPalindrome {
 	/**
-	 * First reverse the list and then make sure the two lists are equal
-	 * Note: comparison can only go to half the list, but not worth computing
-	 * size
+	 * First reverse the list and then make sure the two lists are equal Note:
+	 * comparison can only go to half the list, but not worth computing size
 	 * 
 	 * @param list
 	 * @return whether the list and the reversed list are equal, thus a
@@ -52,7 +51,8 @@ public class P6_IsPalindrome {
 	/**
 	 * Reverse the contents of list, and return the reversed list
 	 * 
-	 * @param list the list to be reversed
+	 * @param list
+	 *            the list to be reversed
 	 * @return the reversed list
 	 */
 	private static LinkedList<Integer> reverse(LinkedList<Integer> list) {
@@ -101,4 +101,47 @@ public class P6_IsPalindrome {
 
 		return true;
 	}
+
+	static class Result {
+		Node<Integer> node;
+		boolean isPalindrome;
+
+		Result(Node<Integer> node, boolean isPalindrome) {
+			this.node = node;
+			this.isPalindrome = isPalindrome;
+		}
+	}
+
+	public static boolean isPalindromeRecursive(LinkedList<Integer> list) {
+		if (list == null)
+			return true;
+		// use the private method given the current node and the list size
+		return isPalindromeRecursive(list.head, list.size()).isPalindrome;
+	}
+
+	private static Result isPalindromeRecursive(Node<Integer> node, int size) {
+		// the middle is always true, and so is an empty node
+		// even number of nodes
+		if (node == null || size == 0)
+			return new Result(node, true);
+		// odd number of nodes, pass next node
+		if (size == 1)
+			return new Result(node.next, true);
+
+		// recurse
+		Result res = isPalindromeRecursive(node.next, size - 2);
+
+		// if the node is not a palindrome, pass failure up
+		if (res.isPalindrome == false || res.node == null)
+			return res;
+
+		// if the two nodes match, then pass success, otherwise pass failure
+		res.isPalindrome = (node.data == res.node.data);
+
+		// advance the corresponding node
+		res.node = res.node.next;
+
+		return res;
+	}
+
 }

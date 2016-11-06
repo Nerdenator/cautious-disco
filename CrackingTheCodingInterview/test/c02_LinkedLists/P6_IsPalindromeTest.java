@@ -43,4 +43,19 @@ public class P6_IsPalindromeTest {
 		Assert.assertTrue(P6_IsPalindrome.isPalindromeReverseFirstHalfStack(l4));
 	}
 
+	@Test
+	public void testIsPalindromeRecursive() {
+		// null list
+		Assert.assertTrue(P6_IsPalindrome.isPalindromeRecursive(null));
+		// empty list
+		Assert.assertTrue(P6_IsPalindrome.isPalindromeRecursive(l0));
+		// one-element list
+		Assert.assertTrue(P6_IsPalindrome.isPalindromeRecursive(l3));
+		// not a palindrome
+		Assert.assertFalse(P6_IsPalindrome.isPalindromeRecursive(l1));
+		Assert.assertFalse(P6_IsPalindrome.isPalindromeRecursive(l5));
+		// a palindrome
+		Assert.assertTrue(P6_IsPalindrome.isPalindromeRecursive(l2));
+		Assert.assertTrue(P6_IsPalindrome.isPalindromeRecursive(l4));
+	}
 }
