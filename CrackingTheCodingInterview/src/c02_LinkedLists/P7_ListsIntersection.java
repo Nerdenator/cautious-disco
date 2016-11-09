@@ -2,7 +2,8 @@ package c02_LinkedLists;
 
 /**
  * Given two singly linked lists, determine if they intersect and return the
- * intersecting node. Note: intersection is defined by reference and not value
+ * intersecting node.
+ * Note: intersection is defined by reference and not value
  * 
  * @author adina
  *
