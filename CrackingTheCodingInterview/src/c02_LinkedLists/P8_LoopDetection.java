@@ -26,7 +26,7 @@ public class P8_LoopDetection {
 		do {
 			slow = slow.next;
 			fast = fast.next.next;
-		} while (slow != fast && fast.next != null);
+		} while (slow != fast && fast != null && fast.next != null);
 
 		// if they didn't intersect, return null
 		if (fast != slow)
